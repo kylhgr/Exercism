@@ -1,0 +1,38 @@
+//function that takes in on parameter type  `i32`, binds it to the name `value`, and prints it
+fn print_int(value: i32) {
+    println!("{:?}", value);
+    return(value);
+}
+
+//function parameter `i32` and returns its double
+//`-> i32` = function will return an i32
+fn double_int(value: i32) -> i32 {
+    value * 2
+}
+
+
+//exit from a function early using return keyword
+fn long_funct() -> i32 {
+    let some_action = false;
+    //code snipped
+    if (some_action) {
+        return 0;
+    }
+}
+
+const fn compute_data_checksum() -> u128 {
+    const DATA: &[u8] = include_bytes!("my_big_data_file");
+    // checksum implementation is left as an exercise for the reader
+  }
+  
+  /// This checksum is used to validate that the user has not tampered with proprietary configuration.
+  pub const DATA_CHECKSUM: u128 = compute_data_checksum();
+  
+  const fn multiply_integer(value: i32) -> i32 {
+    use std::time::SystemTime;
+    if SystemTime::now().elapsed().unwrap().as_nanos() == 0 { // this line errors
+        value * 2
+    } else {
+        value * 3
+    }
+}
